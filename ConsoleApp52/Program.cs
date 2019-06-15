@@ -33,33 +33,33 @@ namespace ConsoleApp52
                     switch (doing)
                     {
                         case 1:
-                            printG("Массив 1: Упорядоченный по возрастанию");
+                            print1("Массив 1: Упорядоченный по возрастанию");
                             print(array1);
-                            printG("Массив 1: После сортировки вставкой");
+                            print1("Массив 1: После сортировки вставкой");
                             InputSort(array1);
                             print(array1);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count11}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
                             goto label_1;
 
                         case 2:
-                            printG("Массив 2: Упорядоченный по убыванию");
+                            print1("Массив 2: Упорядоченный по убыванию");
                             print(array2);
-                            printG("Массив 2: После сортировки вставкой");
+                            print1("Массив 2: После сортировки вставкой");
                             InputSort(array2);
                             print(array2);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count11}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
                             goto label_1;
 
                         case 3:
-                            printG("Массив 3: Не упорядоченный");
+                            print1("Массив 3: Не упорядоченный");
                             print(array3);
-                            printG("Массив 3: После сортировки вставкой");
+                            print1("Массив 3: После сортировки вставкой");
                             InputSort(array3);
                             print(array3);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count11}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
                             goto label_1;
                     }
                     
@@ -80,33 +80,33 @@ namespace ConsoleApp52
                     switch (doing1)
                     {
                         case 1:
-                            printG("Массив 1: упорядоченный по возрастанию");
+                            print1("Массив 1: Упорядоченный по возрастанию");
                             print(array4);
-                            printG("Массив 1: после сортировки вставкой");
+                            print1("Массив 1: После сортировки вставкой");
                             CountingSort(array4);
                             print(array4);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count22}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
                             goto label_1;
 
                         case 2:
-                            printG("Массив 2: упорядоченный по убыванию");
+                            print1("Массив 2: Упорядоченный по убыванию");
                             print(array5);
-                            printG("Массив 2: после сортировки вставкой");
+                            print1("Массив 2: После сортировки вставкой");
                             CountingSort(array5);
                             print(array5);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count22}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
                             goto label_1;
 
                         case 3:
-                            printG("Массив 3: не упорядоченный");
+                            print1("Массив 3: Не упорядоченный");
                             print(array6);
-                            printG("Массив 3: после сортировки вставкой");
+                            print1("Массив 3: После сортировки вставкой");
                             CountingSort(array6);
                             print(array6);
                             Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"\nКоличество пересылок в 1-ой сортировке = {count22}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
                             goto label_1;
                     }
                     
@@ -117,7 +117,7 @@ namespace ConsoleApp52
 
         public static Random rnd = new Random();
         public static int count1 = 0, count2 = 0, count11 = 0, count22 = 0;
-        static void InputSort(int[] array) // сортировка методом вставки
+        static void InputSort(int[] array) 
         {
             count1 = 0;
             count11 = 0;
@@ -136,7 +136,7 @@ namespace ConsoleApp52
             }
         }
 
-        static void CountingSort(int[] array)// сортровка методом подсчета
+        static void CountingSort(int[] array)
         {
             count2 = 0;
             count22 = 0;
@@ -190,7 +190,7 @@ namespace ConsoleApp52
                 array[i] = rnd.Next(1, 10);
             }
         }
-        static void printG(string s)
+        static void print1(string s)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(s);
