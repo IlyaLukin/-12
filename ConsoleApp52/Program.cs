@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,116 +8,9 @@ namespace ConsoleApp52
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-        label_1:
-            Console.WriteLine(@"Выберите сортировку:
-1)Сортировка методом вставки
-2)Сортировка методом подсчёта");
-
-            int menu = int.Parse(Console.ReadLine());
-            switch (menu)
-            {
-                case 1:
-                    
-                    print("Сортирвока методом вставки");
-                    int[] array1 = { 10, 20, 30, 40, 50 };
-                    int[] array2 = { -9, 8, 7, 6, -5, 4, -3, 2, 1, 0 };
-                    int[] array3 = new int[10];
-                    makeRand(array3);
-                    Console.WriteLine(@"Выберите массив:
-1)Упорядоченный по возрастанию
-2) Упорядоченный по убыванию
-3)Не упорядоченный");
-                    int doing = int.Parse(Console.ReadLine());
-                    switch (doing)
-                    {
-                        case 1:
-                            print1("Массив 1: Упорядоченный по возрастанию");
-                            print(array1);
-                            print1("Массив 1: После сортировки вставкой");
-                            InputSort(array1);
-                            print(array1);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
-                            goto label_1;
-
-                        case 2:
-                            print1("Массив 2: Упорядоченный по убыванию");
-                            print(array2);
-                            print1("Массив 2: После сортировки вставкой");
-                            InputSort(array2);
-                            print(array2);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
-                            goto label_1;
-
-                        case 3:
-                            print1("Массив 3: Не упорядоченный");
-                            print(array3);
-                            print1("Массив 3: После сортировки вставкой");
-                            InputSort(array3);
-                            print(array3);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
-                            goto label_1;
-                    }
-                    
-                    break;
-
-                case 2:
-                    
-                    print("Сортирвока методом подсчёта");
-                    int[] array4 = { 10, 20, 30, 40, 50 };
-                    int[] array5 = { 9, 8, -1, 0 };
-                    int[] array6 = new int[10];
-                    makeRand(array6);
-                    Console.WriteLine(@"Выберите массив:
-Упорядоченный по возрастанию 
-2) Упорядоченный по убыванию
-3)Не упорядоченный");
-                    int doing1 = int.Parse(Console.ReadLine());
-                    switch (doing1)
-                    {
-                        case 1:
-                            print1("Массив 1: Упорядоченный по возрастанию");
-                            print(array4);
-                            print1("Массив 1: После сортировки вставкой");
-                            CountingSort(array4);
-                            print(array4);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
-                            goto label_1;
-
-                        case 2:
-                            print1("Массив 2: Упорядоченный по убыванию");
-                            print(array5);
-                            print1("Массив 2: После сортировки вставкой");
-                            CountingSort(array5);
-                            print(array5);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
-                            goto label_1;
-
-                        case 3:
-                            print1("Массив 3: Не упорядоченный");
-                            print(array6);
-                            print1("Массив 3: После сортировки вставкой");
-                            CountingSort(array6);
-                            print(array6);
-                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
-                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
-                            goto label_1;
-                    }
-                    
-                    break;
-            }
-
-        }
-
         public static Random rnd = new Random();
         public static int count1 = 0, count2 = 0, count11 = 0, count22 = 0;
-        static void InputSort(int[] array) 
+        static void InputSort(int[] array)
         {
             count1 = 0;
             count11 = 0;
@@ -179,7 +72,7 @@ namespace ConsoleApp52
         }
         static void print(string s)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(s);
             Console.ResetColor();
         }
@@ -192,9 +85,81 @@ namespace ConsoleApp52
         }
         static void print1(string s)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(s);
-            Console.ResetColor();
         }
+        static void Main(string[] args)
+        {
+          
+            print("Сортирвока методом вставки");
+            int[] array1 = { 10, 20, 30, 40, 50 };
+            int[] array2 = { -9, 8, 7, 6, -5, 4, -3, 2, 1, 0 };
+            int[] array3 = new int[10];
+            makeRand(array3);
+           
+            print1("Массив 1: Упорядоченный по возрастанию");
+                            print(array1);
+                            print1("Массив 1: После сортировки вставкой");
+                            InputSort(array1);
+                            print(array1);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
+                          
+
+                     
+                            print1("\nМассив 2: Упорядоченный по убыванию");
+                            print(array2);
+                            print1("Массив 2: После сортировки вставкой");
+                            InputSort(array2);
+                            print(array2);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
+                           
+
+                      
+                            print1("\nМассив 3: Не упорядоченный");
+                            print(array3);
+                            print1("Массив 3: После сортировки вставкой");
+                            InputSort(array3);
+                            print(array3);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count1}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count11}");
+            
+                    
+                    print("\nСортирвока методом подсчёта");
+                    int[] array4 = { 10, 20, 30, 40, 50 };
+                    int[] array5 = { 8, 7, 1, 0 };
+                    int[] array6 = new int[10];
+                    makeRand(array6);
+
+                            print1("Массив 1: Упорядоченный по возрастанию");
+                            print(array4);
+                            print1("Массив 1: После сортировки подсчета");
+                            CountingSort(array4);
+                            print(array4);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
+                     
+                            print1("\nМассив 2: Упорядоченный по убыванию");
+                            print(array5);
+                            print1("Массив 2: После сортировки подсчета");
+                            CountingSort(array5);
+                            print(array5);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
+                      
+                            print1("\nМассив 3: Не упорядоченный");
+                            print(array6);
+                            print1("Массив 3: После сортировки подсчета");
+                            CountingSort(array6);
+                            print(array6);
+                            Console.WriteLine($"\nКоличество перестановок в 1-ой сортировке = {count2}");
+                            Console.WriteLine($"Количество пересылок в 1-ой сортировке = {count22}");
+            Console.ReadKey();
+                   
+        }
+
     }
+
+     
 }
+
